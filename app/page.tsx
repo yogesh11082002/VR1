@@ -55,7 +55,7 @@ export default function Home() {
         <Hero />
 
         {/* Featured Services Quick Access */}
-        <section className="container py-12 -mt-20 relative z-20">
+        <section className="container py-16 relative z-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {featuredServices.map((service, i) => (
               <motion.div
@@ -87,21 +87,7 @@ export default function Home() {
           title="Our Services"
           subtitle="Comprehensive solutions tailored for homes and businesses across Delhi NCR"
         >
-          <ServicesGrid />
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl glass glass-hover text-white font-semibold"
-            >
-              View All Services
-              <span>→</span>
-            </Link>
-          </motion.div>
+          <ServicesGrid limit={6} showSeeMore={true} />
         </Section>
 
         {/* Stats Section */}
